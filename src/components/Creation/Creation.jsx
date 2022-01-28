@@ -3,8 +3,19 @@ import "./Creation.scss";
 
 const Creation = () => {
   return (
-    <div>
-      <h1>Creations</h1>
+    <div className="creation">
+      <h1>Creation</h1>
+      <div className="grid">
+        <img src="" alt="" />
+        <img src="" alt="" />
+        <img src="" alt="" />
+        <img src="" alt="" />
+        <img src="" alt="" />
+        <img src="" alt="" />
+        <img src="" alt="" />
+        <img src="" alt="" />
+      </div>
+      <button>See All</button>
     </div>
   );
 };
