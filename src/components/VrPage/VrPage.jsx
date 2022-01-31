@@ -1,12 +1,45 @@
-import React from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import "./VrPage.scss";
 import Image from "../../assets/desktop/image-interactive.jpg";
+import Image2 from "../../assets/mobile/image-interactive.jpg";
+
+const useMediaQuery = (width) => {
+  const [targetReached, setTargetReached] = useState(false);
+
+  const updateTarget = useCallback((e) => {
+    if (e.matches) {
+      setTargetReached(true);
+    } else {
+      setTargetReached(false);
+    }
+  }, []);
+
+  useEffect(() => {
+    const media = window.matchMedia(`(max-width: ${width}px)`);
+    media.addListener(updateTarget);
+
+    // Check on mount (callback is not called until a change occurs)
+    if (media.matches) {
+      setTargetReached(true);
+    }
+
+    return () => media.removeListener(updateTarget);
+  }, []);
+
+  return targetReached;
+};
 
 const VrPage = () => {
+  const isBreakpoint = useMediaQuery(1025);
+
   return (
     <div className="vrpage">
       <div className="image">
-        <img src={Image} alt="" />
+        {isBreakpoint ? (
+          <img src={Image2} alt="" />
+        ) : (
+          <img src={Image} alt="" />
+        )}
       </div>
       <div className="text">
         <h1>
