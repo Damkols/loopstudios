@@ -1,6 +1,7 @@
 .footer {
   width: 100%;
   background: #101010;
+  margin-top: 6rem;
 
   .container {
     width: min(95%, 1200px);
@@ -36,6 +37,7 @@
         padding: 3% 0 0;
         @media (max-width: 725px) {
           flex-direction: column;
+          padding: 6% 0 0;
         }
         li {
           list-style: none;
@@ -87,8 +89,9 @@
         padding: 4% 0 0;
         font-family: "Poppins", sans-serif;
         color: #fff;
+        text-align: center;
         @media (max-width: 725px) {
-          padding: 0 0 0;
+          padding: 2% 0 0;
         }
       }
     }

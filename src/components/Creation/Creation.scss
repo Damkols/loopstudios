@@ -1,6 +1,58 @@
 .creation {
   width: min(90%, 1200px);
+  margin-top: 4.5rem;
   margin-inline: auto;
   display: flex;
   flex-direction: column;
+
+  @media (max-width: 1025px) {
+    margin-top: 4.5rem;
+  }
+
+  h1 {
+    padding: 1rem 0;
+    font-family: "Poppins", sans-serif;
+    letter-spacing: 2px;
+    font-weight: 400;
+    font-size: clamp(1rem, 2vw + 1.5rem, 3.75rem);
+    text-transform: uppercase;
+
+    @media (max-width: 1025px) {
+      padding: 0.5rem 0 2rem;
+      font-weight: 300;
+      line-height: 2;
+      text-align: center;
+    }
+  }
+
+  .grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1em;
+
+    .imgContainer {
+      width: 100%;
+
+      @media (max-width: 1025px) {
+        grid-column: 1 / span4;
+      }
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  button {
+    width: fit-content;
+    padding: 0.75rem clamp(2rem, 2vw + 3rem, 4.75rem);
+    margin-inline: auto;
+    margin-top: 1rem;
+    border: 1px solid #101010;
+    outline: none;
+    font-weight: 500;
+    font-size: clamp(0.5rem, 1vw + 0.5rem, 1rem);
+    text-transform: uppercase;
+  }
 }
