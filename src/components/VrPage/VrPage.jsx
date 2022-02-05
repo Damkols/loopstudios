@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState, useRef } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import "./VrPage.scss";
 import Image from "../../assets/desktop/image-interactive.jpg";
 import Image2 from "../../assets/mobile/image-interactive.jpg";
@@ -29,22 +29,22 @@ const useMediaQuery = (width) => {
   return targetReached;
 };
 
-const VrPage = ({ timeline }) => {
+const VrPage = () => {
   const isBreakpoint = useMediaQuery(1025);
 
-  let text = useRef(null);
-  useEffect(() => {
-    timeline.from(text, {
-      duration: 1.8,
-      delay: 1,
-      x: 650,
-      skewX: 10,
-      opacity: 0,
-      stagger: {
-        amount: 0.7,
-      },
-    });
-  });
+  // let text = useRef(null);
+  // useEffect(() => {
+  //   timeline.from(text, {
+  //     duration: 1.8,
+  //     delay: 1,
+  //     x: 650,
+  //     skewX: 10,
+  //     opacity: 0,
+  //     stagger: {
+  //       amount: 0.7,
+  //     },
+  //   });
+  // });
 
   return (
     <div className="vrpage">
@@ -55,7 +55,7 @@ const VrPage = ({ timeline }) => {
           <img src={Image} alt="" />
         )}
       </div>
-      <div className="text" ref={(el) => (text = el)}>
+      <div className="text">
         <h1>
           The Leader in <br /> Interactive VR
         </h1>
